@@ -1,0 +1,13 @@
+HOSTNAME="kinshicho"
+TAGS="
+    redhat
+    fedora
+    selinux
+"
+DOTFILES_DIRS="
+    ~/.config/rcm/dotfiles
+"
+EXCLUDES="
+    COPYING
+    README.md
+"

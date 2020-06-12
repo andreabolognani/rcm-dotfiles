@@ -1,0 +1,13 @@
+HOSTNAME="arya"
+TAGS="
+    personal
+    debian
+    apparmor
+"
+DOTFILES_DIRS="
+    ~/.config/rcm/dotfiles
+"
+EXCLUDES="
+    COPYING
+    README.md
+"
