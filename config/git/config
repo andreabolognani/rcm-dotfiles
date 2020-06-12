@@ -19,15 +19,3 @@
 [diff "tgz"]
     binary = true
     textconv = tar -xvzO -f
-
-[diff "dockerfilezip"]
-    binary = true
-    textconv = unzip -q -c -a
-
-#[credential "https://github.com"]
-#    username = andreabolognani
-#    helper= !~/.config/git/credential development/github
-
-#[credential "https://salsa.debian.org"]
-#    username = ab-guest
-#    helper= !~/.config/git/credential debian/salsa

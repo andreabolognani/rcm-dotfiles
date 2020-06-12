@@ -3,7 +3,6 @@
     smtpserver = smtp.corp.redhat.com
     smtpserverport = 25
     smtpencryption = tls
-#   smtpsslcertpath =
     confirm = auto
     suppresscc = all
     suppressfrom = true

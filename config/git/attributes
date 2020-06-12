@@ -1,3 +1,2 @@
 *.tar.gz diff=tgz
 *.tgz diff=tgz
-buildenv-*.zip diff=dockerfilezip
