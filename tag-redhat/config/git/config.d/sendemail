@@ -1,0 +1,10 @@
+[sendemail]
+    from = Andrea Bolognani <abologna@redhat.com>
+    smtpserver = smtp.corp.redhat.com
+    smtpserverport = 25
+    smtpencryption = tls
+#   smtpsslcertpath =
+    confirm = auto
+    suppresscc = all
+    suppressfrom = true
+    signedoffbycc = false

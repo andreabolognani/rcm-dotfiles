@@ -1,0 +1,33 @@
+[include]
+    path = config.d/user
+    path = config.d/sendemail
+
+[color]
+    ui = auto
+
+[push]
+    default = simple
+
+[format]
+    coverLetter = auto
+    signOff = true
+
+[diff]
+    renamelimit = 1000
+    renames = copies
+
+[diff "tgz"]
+    binary = true
+    textconv = tar -xvzO -f
+
+[diff "dockerfilezip"]
+    binary = true
+    textconv = unzip -q -c -a
+
+#[credential "https://github.com"]
+#    username = andreabolognani
+#    helper= !~/.config/git/credential development/github
+
+#[credential "https://salsa.debian.org"]
+#    username = ab-guest
+#    helper= !~/.config/git/credential debian/salsa
