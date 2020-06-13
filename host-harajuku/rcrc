@@ -13,3 +13,6 @@ EXCLUDES="
     _dconf/*
     _secret/*
 "
+COPY_ALWAYS="
+    ssh/*
+"

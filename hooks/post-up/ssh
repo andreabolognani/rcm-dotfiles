@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+if test "$RCRC" && test -e "$RCRC"; then
+    . "$RCRC"
+elif test -e ~/.rcrc; then
+    . ~/.rcrc
+fi
+
+echo "ssh: fixing permissions"
+find ~/.ssh -type d -exec chmod 0700 '{}' ';'
+find ~/.ssh -type f -exec chmod 0600 '{}' ';'
+
+for tag in $TAGS; do
+    if test "$tag" != "selinux"; then
+        continue
+    fi
+
+    echo "ssh: fixing SELinux labels"
+    find ~/.ssh -exec chcon -t ssh_home_t '{}' ';'
+done
