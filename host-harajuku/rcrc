@@ -10,4 +10,5 @@ DOTFILES_DIRS="
 EXCLUDES="
     COPYING
     README.md
+    _dconf/*
 "

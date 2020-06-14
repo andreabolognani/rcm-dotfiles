@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# TODO: Implement host-* and tag-* logic
+
+set -e
+
+if test "$RCRC" && test -e "$RCRC"; then
+    . "$RCRC"
+elif test -e ~/.rcrc; then
+    . ~/.rcrc
+fi
+
+TOPDIR="$(dirname "$0")/../.."
+DCONFDIR="$TOPDIR/_dconf"
+
+if ! test -d "$DCONFDIR"; then
+    exit 0
+fi
+
+tmpfile=$(mktemp)
+cleanup() {
+    rm -f "$tmpfile"
+}
+trap cleanup EXIT
+
+for dconffile in $(find "$DCONFDIR" -type f -printf "%P\n"); do
+    dconfpath=$(dirname "$dconffile")
+    dconfname=$(basename "$dconffile")
+    dconfkey="/$(echo "$dconfname" | tr . /)/"
+
+    # Some applications, for example Tilix, don't react immediately to
+    # configuration changes and stay in the "settings reset" state until
+    # they are restarted, which can be annoying. If the current settings
+    # already match those we would apply, just don't do anything
+    dconf dump "$dconfkey" >"$tmpfile"
+    if diff "$DCONFDIR/$dconffile" "$tmpfile" >/dev/null 2>&1; then
+        continue
+    fi
+
+    echo "dconf: loading settings for $dconfkey"
+    dconf reset -f "$dconfkey"
+    dconf load "$dconfkey" <"$DCONFDIR/$dconffile"
+done
