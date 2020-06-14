@@ -11,4 +11,5 @@ EXCLUDES="
     COPYING
     README.md
     _dconf/*
+    _secret/*
 "
