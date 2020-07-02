@@ -22,3 +22,9 @@ call plug#end()
 " Use gruvbox theme
 set background=dark
 colorscheme gruvbox
+
+" Show line numbers
+set number
+
+" Mark the 80 column limit
+set colorcolumn=80
