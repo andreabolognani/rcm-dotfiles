@@ -1,0 +1,5 @@
+set nocompatible
+
+" Keep $HOME tidy
+set viminfo+=n~/.vim/viminfo
+set viminfofile=~/.vim/viminfo
