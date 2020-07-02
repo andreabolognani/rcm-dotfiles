@@ -40,3 +40,8 @@ set laststatus=2
 
 " Use powerline fonts for the status line
 let g:airline_powerline_fonts = 1
+
+" Perform case-insensitive search unless the pattern contains
+" uppercase letters
+set ignorecase
+set smartcase
