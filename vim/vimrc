@@ -15,4 +15,10 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-plug'
 
+Plug 'morhetz/gruvbox'
+
 call plug#end()
+
+" Use gruvbox theme
+set background=dark
+colorscheme gruvbox
