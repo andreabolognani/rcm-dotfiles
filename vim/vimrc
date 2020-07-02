@@ -81,3 +81,14 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 " Indent automatically
 set autoindent
 set smartindent
+
+" Use spaces instead of tabs, except when editing make rules
+set expandtab
+autocmd FileType make,automake setlocal noexpandtab
+
+" Indentation is usually 4 spaces, but only 2 spaces are used
+" for XML files
+set tabstop=4
+set shiftwidth=4
+autocmd FileType xml setlocal tabstop=2
+autocmd FileType xml setlocal shiftwidth=2
