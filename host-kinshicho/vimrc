@@ -1,0 +1,91 @@
+set nocompatible
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/vim-plug'
+
+Plug 'morhetz/gruvbox'
+
+Plug 'vim-airline/vim-airline'
+
+Plug 'tpope/vim-fugitive'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-rls'
+Plug 'clangd/coc-clangd'
+Plug 'josa42/coc-go'
+Plug 'neoclide/coc-python'
+
+"Plug 'prabirshrestha/async.vim'
+"Plug 'prabirshrestha/vim-lsp'
+
+"Plug 'rust-lang/rust.vim'
+
+"Plug 'fatih/vim-go'
+
+"Plug 'prabirshrestha/asyncomplete.vim'
+"Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+call plug#end()
+
+"if executable('clangd')
+"    au User lsp_setup call lsp#register_server({
+"        \ 'name': 'clangd',
+"        \ 'cmd': {server_info->['clangd', '-background-index']},
+"        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+"        \ })
+"endif
+
+"if executable('rls')
+"    au User lsp_setup call lsp#register_server({
+"        \ 'name': 'rls',
+"        \ 'cmd': {server_info->['rls']},
+"        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+"        \ 'whitelist': ['rust'],
+"        \ })
+"endif
+
+"let g:lsp_cxx_hl_use_text_props = 1
+
+"inoremap <C-N> <C-X><C-O>
+
+set path=.,**
+
+set wildmenu
+set wildmode=longest:full
+
+autocmd CompleteDone * pclose
+set ignorecase
+set smartcase
+
+set background=dark
+colorscheme gruvbox
+
+set autoindent
+set smartindent
+set cindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set cinoptions=(0,:0,l1,t0,L3
+au FileType make setlocal noexpandtab
+au BufRead,BufNewFile *.am setlocal noexpandtab
+match ErrorMsg /\s\+$\| \+\ze\t/
+
+" Show line numbers
+set number
+
+" Mark the 80 column limit
+set colorcolumn=80
+"highlight ColorColumn ctermbg=darkgrey
+
+" Always show status line
+set laststatus=2
+"set noshowmode
+
+" Abbreviations for git
+iabbrev gack Reviewed-by: Andrea Bolognani <abologna@redhat.com>
+iabbrev gsob Signed-off-by: Andrea Bolognani <abologna@redhat.com>
+iabbrev gtb  Tested-by: Andrea Bolognani <abologna@redhat.com>
+
+iabbrev shruggy ¯\_(ツ)_/¯

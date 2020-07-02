@@ -1,0 +1,59 @@
+set nocompatible
+filetype off
+
+" <vundle>
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'edkolev/promptline.vim'
+
+Plugin 'morhetz/gruvbox'
+
+Plugin 'tpope/vim-fugitive'
+
+"Plugin 'jeaye/color_coded'
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()
+filetype plugin indent on
+" </vundle>
+
+let g:color_coded_enabled = 1
+
+let g:ycm_extra_conf_globlist = ['~/src/upstream/libvirt/*', '~/src/exploded/libvirt/*']
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+set background=dark
+colorscheme gruvbox
+
+set autoindent
+set smartindent
+set cindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set cinoptions=(0,:0,l1,t0,L3
+au FileType make setlocal noexpandtab
+au BufRead,BufNewFile *.am setlocal noexpandtab
+match ErrorMsg /\s\+$\| \+\ze\t/
+
+" Show line numbers
+set number
+
+" Mark the 80 column limit
+set colorcolumn=80
+"highlight ColorColumn ctermbg=darkgrey
+
+" Always show status line
+set laststatus=2
+"set noshowmode
+
+" Abbreviations for git
+iabbrev gack Reviewed-by: Andrea Bolognani <abologna@redhat.com>
+iabbrev gsob Signed-off-by: Andrea Bolognani <abologna@redhat.com>
+iabbrev gtb  Tested-by: Andrea Bolognani <abologna@redhat.com>
+
+iabbrev shruggy ¯\_(ツ)_/¯
