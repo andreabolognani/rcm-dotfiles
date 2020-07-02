@@ -92,3 +92,14 @@ set tabstop=4
 set shiftwidth=4
 autocmd FileType xml setlocal tabstop=2
 autocmd FileType xml setlocal shiftwidth=2
+
+" Abbreviations for git
+let s:gitname = systemlist("git config user.name")[0]
+let s:gitemail = systemlist("git config user.email")[0]
+execute "iabbrev gsob Signed-off-by: " . s:gitname . " <" . s:gitemail . ">"
+execute "iabbrev gack Reviewed-by: " . s:gitname . " <" . s:gitemail . ">"
+unlet s:gitname
+unlet s:gitemail
+
+" Other abbreviations
+iabbrev shruggy ¯\_(ツ)_/¯
