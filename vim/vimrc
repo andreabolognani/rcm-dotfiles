@@ -21,6 +21,8 @@ Plug 'vim-airline/vim-airline'
 
 Plug 'romainl/vim-cool'
 
+Plug 'ervandew/supertab'
+
 call plug#end()
 
 " Use gruvbox theme
@@ -54,3 +56,10 @@ set hlsearch
 
 " Make insert mode completion more usable
 set completeopt=longest,menuone,popup
+
+" Configure supertab
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:SuperTabLongestHighlight = 1
+let g:SuperTabCrMapping = 1
+let g:SuperTabCompleteCase = "ignore"
+let g:SuperTabClosePreviewOnPopupClose = 1
