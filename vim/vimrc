@@ -33,6 +33,8 @@ Plug 'mattn/vim-lsp-settings'
 
 Plug 'fatih/vim-go'
 
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 
 " Use gruvbox theme
