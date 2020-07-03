@@ -51,3 +51,6 @@ set smartcase
 " Search incrementally and highlight matches
 set incsearch
 set hlsearch
+
+" Make insert mode completion more usable
+set completeopt=longest,menuone,popup
