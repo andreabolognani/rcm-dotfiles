@@ -23,6 +23,9 @@ Plug 'romainl/vim-cool'
 
 Plug 'ervandew/supertab'
 
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-omni.vim'
+
 call plug#end()
 
 " Use gruvbox theme
