@@ -45,3 +45,7 @@ let g:airline_powerline_fonts = 1
 " uppercase letters
 set ignorecase
 set smartcase
+
+" Search incrementally and highlight matches
+set incsearch
+set hlsearch
