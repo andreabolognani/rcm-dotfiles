@@ -32,3 +32,6 @@ set colorcolumn=80
 " Make command mode completion more usable
 set wildmenu
 set wildmode=longest:full
+
+" Always show the status line
+set laststatus=2
