@@ -77,3 +77,7 @@ let g:SuperTabLongestHighlight = 1
 let g:SuperTabCrMapping = 1
 let g:SuperTabCompleteCase = "ignore"
 let g:SuperTabClosePreviewOnPopupClose = 1
+
+" Indent automatically
+set autoindent
+set smartindent
