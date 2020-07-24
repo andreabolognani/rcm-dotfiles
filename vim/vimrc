@@ -78,6 +78,9 @@ let g:SuperTabCrMapping = 1
 let g:SuperTabCompleteCase = "ignore"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
+" Wrap text to 70 columns
+set textwidth=69
+
 " Indent automatically
 set autoindent
 set smartindent
