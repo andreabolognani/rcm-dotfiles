@@ -4,6 +4,31 @@
 
 set -e
 
+process() {
+    dconffile="$1"
+
+    dconfpath=$(dirname "$dconffile")
+    dconfname=$(basename "$dconffile")
+    dconfkey="/$(echo "$dconfname" | tr . /)/"
+
+    # Some applications, for example Tilix, don't react immediately to
+    # configuration changes and stay in the "settings reset" state until
+    # they are restarted, which can be annoying. If the current settings
+    # already match those we would apply, just don't do anything
+    dconf dump "$dconfkey" >"$TMPFILE"
+    if diff "$DCONFDIR/$dconffile" "$TMPFILE" >/dev/null 2>&1; then
+        return
+    fi
+
+    echo "dconf: loading settings for $dconfkey"
+    dconf reset -f "$dconfkey"
+    dconf load "$dconfkey" <"$DCONFDIR/$dconffile"
+}
+
+cleanup() {
+    rm -f "$TMPFILE"
+}
+
 if test "$RCRC" && test -e "$RCRC"; then
     . "$RCRC"
 elif test -e ~/.rcrc; then
@@ -17,27 +42,9 @@ if ! test -d "$DCONFDIR"; then
     exit 0
 fi
 
-tmpfile=$(mktemp)
-cleanup() {
-    rm -f "$tmpfile"
-}
+TMPFILE=$(mktemp)
 trap cleanup EXIT
 
 for dconffile in $(find "$DCONFDIR" -type f -printf "%P\n"); do
-    dconfpath=$(dirname "$dconffile")
-    dconfname=$(basename "$dconffile")
-    dconfkey="/$(echo "$dconfname" | tr . /)/"
-
-    # Some applications, for example Tilix, don't react immediately to
-    # configuration changes and stay in the "settings reset" state until
-    # they are restarted, which can be annoying. If the current settings
-    # already match those we would apply, just don't do anything
-    dconf dump "$dconfkey" >"$tmpfile"
-    if diff "$DCONFDIR/$dconffile" "$tmpfile" >/dev/null 2>&1; then
-        continue
-    fi
-
-    echo "dconf: loading settings for $dconfkey"
-    dconf reset -f "$dconfkey"
-    dconf load "$dconfkey" <"$DCONFDIR/$dconffile"
+    process "$dconffile"
 done
