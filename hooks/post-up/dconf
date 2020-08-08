@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# TODO: Implement host-* and tag-* logic
-
 set -e
 
 process() {
@@ -16,13 +14,13 @@ process() {
     # they are restarted, which can be annoying. If the current settings
     # already match those we would apply, just don't do anything
     dconf dump "$dconfkey" >"$TMPFILE"
-    if diff "$DCONFDIR/$dconffile" "$TMPFILE" >/dev/null 2>&1; then
+    if diff "$DCONFDIR/$dconfpath/$dconfname" "$TMPFILE" >/dev/null 2>&1; then
         return
     fi
 
     echo "dconf: loading settings for $dconfkey"
     dconf reset -f "$dconfkey"
-    dconf load "$dconfkey" <"$DCONFDIR/$dconffile"
+    dconf load "$dconfkey" <"$DCONFDIR/$dconfpath/$dconfname"
 }
 
 cleanup() {
@@ -45,6 +43,22 @@ fi
 TMPFILE=$(mktemp)
 trap cleanup EXIT
 
-for dconffile in $(find "$DCONFDIR" -type f -printf "%P\n"); do
+for dconffile in $(find "$DCONFDIR" -maxdepth 1 -type f -printf "%P\n"); do
     process "$dconffile"
+done
+for tag in $TAGS; do
+    if ! test -d "$DCONFDIR/tag-$tag"; then
+        continue
+    fi
+    for dconffile in $(find "$DCONFDIR/tag-$tag" -maxdepth 1 -type f -printf "%P\n"); do
+        process "tag-$tag/$dconffile"
+    done
+done
+for host in $HOSTNAME; do
+    if ! test -d "$DCONFDIR/host-$host"; then
+        continue
+    fi
+    for dconffile in $(find "$DCONFDIR/host-$host" -maxdepth 1 -type f -printf "%P\n"); do
+        process "host-$host/$dconffile"
+    done
 done
