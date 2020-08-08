@@ -1,0 +1,7 @@
+[Accounts/idle/irc/abologna0]
+identify-username='abologna'
+identify-username-supported=false
+
+[Accounts/idle/irc/abologna2]
+identify-username='abologna'
+identify-username-supported=true

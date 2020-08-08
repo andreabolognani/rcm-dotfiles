@@ -14,5 +14,6 @@ EXCLUDES="
     _secret/*
 "
 COPY_ALWAYS="
+    local/share/telepathy/mission-control/accounts.cfg
     ssh/*
 "
