@@ -1,0 +1,5 @@
+[/]
+current=uint32 0
+per-window=false
+sources=[('xkb', 'us')]
+xkb-options=['compose:ralt', 'lv3:ralt_switch']
