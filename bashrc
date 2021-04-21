@@ -39,9 +39,6 @@ fi
 # CRC
 export PATH="$PATH:$HOME/.crc/bin"
 
-# KubeVirt
-export KUBEVIRT_PROVIDER=k8s-1.18
-
 # Google Cloud SDK
 if test -d ~/.google-cloud-sdk; then
     . ~/.google-cloud-sdk/path.bash.inc
