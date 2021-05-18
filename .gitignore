@@ -1,6 +1,9 @@
+consolerc
 local/share/telepathy/mission-control/accounts.cfg
+host-*/consolerc
 host-*/local/share/telepathy/mission-control/accounts.cfg
 host-*/ssh/*
 ssh/*
+tag-*/consolerc
 tag-*/local/share/telepathy/mission-control/accounts.cfg
 tag-*/ssh/*
