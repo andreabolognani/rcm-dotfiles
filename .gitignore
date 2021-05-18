@@ -1,9 +1,12 @@
 consolerc
+config/copr
 local/share/telepathy/mission-control/accounts.cfg
 host-*/consolerc
+host-*/config/copr
 host-*/local/share/telepathy/mission-control/accounts.cfg
 host-*/ssh/*
 ssh/*
 tag-*/consolerc
+tag-*/config/copr
 tag-*/local/share/telepathy/mission-control/accounts.cfg
 tag-*/ssh/*
