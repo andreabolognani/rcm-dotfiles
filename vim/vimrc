@@ -56,8 +56,15 @@ set wildmode=longest:full
 " Always show the status line
 set laststatus=2
 
-" Use powerline fonts for the status line
+" Customize the status line
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#scrollbar#enabled = 0
+if !exists("g:airline_symbols")
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = " "
+let g:airline_symbols.maxlinenr = ""
+let g:airline_symbols.colnr = ":"
 
 " Perform case-insensitive search unless the pattern contains
 " uppercase letters
