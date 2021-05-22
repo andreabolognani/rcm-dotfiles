@@ -12,7 +12,11 @@ export MAKEFLAGS="-j$(getconf _NPROCESSORS_ONLN)"
 export PATH="$PATH:$HOME/.local/bin"
 
 # Borg
-export BORG_REPO="/run/media/$USER/StoreJetBackups/borg"
+if test -e "/run/media"; then
+    export BORG_REPO="/run/media/$USER/StoreJetBackups/borg"
+elif test -e "/media"; then
+    export BORG_REPO="/media/$USER/StoreJetBackups/borg"
+fi
 
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
