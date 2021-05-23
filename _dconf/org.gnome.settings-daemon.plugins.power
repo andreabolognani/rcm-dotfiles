@@ -1,0 +1,8 @@
+[/]
+ambient-enabled=false
+idle-dim=false
+power-button-action='suspend'
+power-saver-profile-on-low-battery=false
+sleep-inactive-ac-timeout=3600
+sleep-inactive-ac-type='nothing'
+sleep-inactive-battery-type='nothing'
