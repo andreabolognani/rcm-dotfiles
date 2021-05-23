@@ -1,0 +1,8 @@
+HOOKDIR="/home/abologna/.config/pbuilder/default-hooks"
+BASEPATH="/var/cache/pbuilder/sid-amd64.cow"
+MIRRORSITE="http://deb.debian.org/debian"
+DISTRIBUTION="sid"
+COMPONENTS="main"
+EXTRAPACKAGES="eatmydata"
+EATMYDATA="yes"
+PBUILDERSATISFYDEPENDSCMD="/usr/lib/pbuilder/pbuilder-satisfydepends-apt"
