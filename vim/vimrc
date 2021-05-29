@@ -39,6 +39,9 @@ Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
+" Use UTF-8
+set encoding=utf-8
+
 " Use gruvbox theme
 set background=dark
 colorscheme gruvbox
