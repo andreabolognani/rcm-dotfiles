@@ -1,6 +1,6 @@
 [/]
-last-selected-channel={'account': <'/org/freedesktop/Telepathy/Account/idle/irc/abologna0'>, 'channel': <'#virt'>}
+last-selected-channel={'account': <'/org/freedesktop/Telepathy/Account/idle/irc/abologna1'>, 'channel': <'#virt'>}
 run-in-background=false
-saved-channel-list=[{'account': <'/org/freedesktop/Telepathy/Account/idle/irc/abologna1'>, 'channel': <'#italia'>}, {'account': <'/org/freedesktop/Telepathy/Account/idle/irc/abologna1'>, 'channel': <'#virt'>}, {'account': <'/org/freedesktop/Telepathy/Account/idle/irc/abologna1'>, 'channel': <'#capybara'>}, {'account': <'/org/freedesktop/Telepathy/Account/idle/irc/abologna0'>, 'channel': <'#virt'>}, {'account': <'/org/freedesktop/Telepathy/Account/idle/irc/abologna1'>, 'channel': <'#virt-kata'>}, {'account': <'/org/freedesktop/Telepathy/Account/idle/irc/abologna1'>, 'channel': <'#kvm'>}]
+saved-channel-list=[{'account': <'/org/freedesktop/Telepathy/Account/idle/irc/abologna1'>, 'channel': <'#italia'>}, {'account': <'/org/freedesktop/Telepathy/Account/idle/irc/abologna1'>, 'channel': <'#virt'>}, {'account': <'/org/freedesktop/Telepathy/Account/idle/irc/abologna1'>, 'channel': <'#capybara'>}, {'account': <'/org/freedesktop/Telepathy/Account/idle/irc/abologna1'>, 'channel': <'#virt-kata'>}, {'account': <'/org/freedesktop/Telepathy/Account/idle/irc/abologna1'>, 'channel': <'#kvm'>}, {'account': <'/org/freedesktop/Telepathy/Account/idle/irc/abologna0'>, 'channel': <'#virt'>}]
 window-maximized=true
 window-size=[960, 1006]
