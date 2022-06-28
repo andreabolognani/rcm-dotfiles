@@ -58,7 +58,46 @@ export PATH="$PATH:$SDK/tools:$SDK/platform-tools:$STUDIO/bin"
 export DEBFULLNAME="Andrea Bolognani"
 export DEBEMAIL="eof@kiyuko.org"
 
-. ~/.promptline.sh
+# prompt
+
+# colors
+#   host     \033[38;5;207m
+#   path     \033[38;5;117m
+#   branch   \033[38;5;172m
+#   other    \033[38;5;250m
+#   default  \033[39m
+# title      \033]0;...\007
+
+# escape sequences must be enclosed by \[...\] (when added to PS1
+# directly) or \001...\002 (when part of a function whose output is
+# used in PS1 via command substitution)
+
+__PS1_git_branch_name() {
+    git symbolic-ref --quiet --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null
+}
+
+__PS1_git_color() {
+    local branch_name=$(__PS1_git_branch_name)
+    if test "$branch_name"; then
+        echo -e '\001\033[38;5;250m\002:\001\033[38;5;172m\002'"$branch_name"
+    fi
+}
+
+__PS1_git_nocolor() {
+    local branch_name=$(__PS1_git_branch_name)
+    if test "$branch_name"; then
+        echo ":$branch_name"
+    fi
+}
+
+case "$TERM" in
+    xterm-*color)
+        export PS1='\[\033]0;\h:\w\007\]\[\033[38;5;207m\]\h\[\033[38;5;250m\]:\[\033[38;5;117m\]\w$(__PS1_git_color)\[\033[38;5;250m\]\$\[\033[39m\] '
+    ;;
+    *)
+        export PS1='\h:\w$(__PS1_git_nocolor)\$ '
+    ;;
+esac
 
 # completion
 if [ -f /usr/share/bash-completion/bash_completion ]; then
