@@ -60,6 +60,13 @@ export DEBEMAIL="eof@kiyuko.org"
 
 . ~/.promptline.sh
 
+# completion
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
 alias vi="vim"
 alias ls="ls --color=auto"
 
