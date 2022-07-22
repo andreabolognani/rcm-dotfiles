@@ -1,3 +1,6 @@
+[legacy]
+theme-variant='dark'
+
 [legacy/profiles:]
 default='4b615ac2-288e-4a4b-a52d-7035ac0c1c37'
 list=['4b615ac2-288e-4a4b-a52d-7035ac0c1c37']
