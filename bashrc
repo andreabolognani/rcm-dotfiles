@@ -43,17 +43,6 @@ fi
 # CRC
 export PATH="$PATH:$HOME/.crc/bin"
 
-# Google Cloud SDK
-if test -d ~/.google-cloud-sdk; then
-    . ~/.google-cloud-sdk/path.bash.inc
-    . ~/.google-cloud-sdk/completion.bash.inc
-fi
-
-# Android SDK
-SDK="$HOME/tmp/android/sdk"
-STUDIO="$HOME/tmp/android/studio"
-export PATH="$PATH:$SDK/tools:$SDK/platform-tools:$STUDIO/bin"
-
 # devscripts
 export DEBFULLNAME="Andrea Bolognani"
 export DEBEMAIL="eof@kiyuko.org"
