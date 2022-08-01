@@ -80,7 +80,7 @@ __PS1_git_nocolor() {
 }
 
 case "$TERM" in
-    xterm-*color)
+    *xterm*color)
         export PS1='\[\033]0;\h:\w\007\]\[\033[38;5;207m\]\h\[\033[38;5;250m\]:\[\033[38;5;117m\]\w$(__PS1_git_color)\[\033[38;5;250m\]\$\[\033[39m\] '
     ;;
     *)
