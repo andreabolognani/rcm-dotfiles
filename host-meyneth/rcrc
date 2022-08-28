@@ -1,0 +1,21 @@
+HOSTNAME="meyneth"
+TAGS="
+    personal
+    debian
+    apparmor
+"
+DOTFILES_DIRS="
+    ~/.config/rcm/dotfiles
+"
+EXCLUDES="
+    COPYING
+    README.md
+    _dconf/*
+    _secret/*
+"
+COPY_ALWAYS="
+    consolerc
+    config/copr
+    local/share/telepathy/mission-control/accounts.cfg
+    ssh/*
+"
