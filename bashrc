@@ -68,7 +68,12 @@ __PS1_git_branch_name() {
 __PS1_git_color() {
     local branch_name=$(__PS1_git_branch_name)
     if test "$branch_name"; then
-        echo -e '\001\033[38;5;250m\002:\001\033[38;5;172m\002'"$branch_name"
+        # Note that we have to use \0002 instead of \002 right before
+        # the name of the branch, because it could start with a digit
+        # and that would in turn cause echo to output the wrong escape
+        # sequence, as octals are allowed to have 1 to 3 digits after
+        # the initial 0
+        echo -e '\001\033[38;5;250m\002:\001\033[38;5;172m\0002'"$branch_name"
     fi
 }
 
