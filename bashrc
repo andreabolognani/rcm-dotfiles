@@ -25,6 +25,10 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export GOPATH="$HOME/src/go"
 export PATH="$PATH:$GOPATH/bin"
 
+# KubeVirt
+export KUBEVIRT_CRI=docker
+export KUBEVIRTCI_RUNTIME=docker
+
 # kubectl
 if which kubectl >/dev/null 2>&1; then
     . <(kubectl completion bash)
