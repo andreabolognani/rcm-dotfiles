@@ -13,9 +13,9 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # Borg
 if test -e "/run/media"; then
-    export BORG_REPO="/run/media/$USER/BasicBackups/borg"
+    export BORG_REPO="/run/media/$USER/C325Backups/borg"
 elif test -e "/media"; then
-    export BORG_REPO="/media/$USER/BasicBackups/borg"
+    export BORG_REPO="/media/$USER/C325Backups/borg"
 fi
 
 # Rust
