@@ -1,12 +1,15 @@
 consolerc
 config/copr
+config/gmail-yaml-filters/*
 local/share/telepathy/mission-control/accounts.cfg
 host-*/consolerc
 host-*/config/copr
+host-*/config/gmail-yaml-filters/*
 host-*/local/share/telepathy/mission-control/accounts.cfg
 host-*/ssh/*
 ssh/*
 tag-*/consolerc
 tag-*/config/copr
+tag-*/config/gmail-yaml-filters/*
 tag-*/local/share/telepathy/mission-control/accounts.cfg
 tag-*/ssh/*
