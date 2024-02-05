@@ -104,6 +104,14 @@ elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+# environment-specific functionality
+for addon in ~/.bashrc.d/*; do
+    if ! test -f "$addon"; then
+        continue
+    fi
+    . "$addon"
+done
+
 alias vi="vim"
 alias ls="ls --color=auto"
 
