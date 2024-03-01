@@ -2,12 +2,14 @@ bashrc.d/console
 config/copr
 config/gmail-yaml-filters/*
 local/share/telepathy/mission-control/accounts.cfg
+ssh/*
+
 host-*/bashrc.d/console
 host-*/config/copr
 host-*/config/gmail-yaml-filters/*
 host-*/local/share/telepathy/mission-control/accounts.cfg
 host-*/ssh/*
-ssh/*
+
 tag-*/bashrc.d/console
 tag-*/config/copr
 tag-*/config/gmail-yaml-filters/*
