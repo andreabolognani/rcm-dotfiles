@@ -12,6 +12,9 @@
     coverLetter = auto
     signOff = true
 
+[mailinfo]
+	quotedCR = strip
+
 [diff]
     renamelimit = 1000
     renames = copies
